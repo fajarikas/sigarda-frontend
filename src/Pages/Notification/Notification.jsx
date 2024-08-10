@@ -173,7 +173,7 @@ const Notification = () => {
   };
 
   return (
-    <div className="space-x-5 z-30 w-10/12 h-screen">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-screen">
       <Title text="Notifications" />
 
       <div className="mt-7 items-center w-full flex justify-between">

@@ -168,7 +168,7 @@ const ShiftChange = () => {
   };
 
   return (
-    <div className="z-30 w-10/12 h-screen space-x-5 lg:h-fit">
+    <div className="z-30 w-10/12 h-screen lg:space-x-0 space-x-5 lg:h-fit">
       <Title text="Shift Changes" />
 
       <div className="mt-7 items-center w-full flex justify-between">

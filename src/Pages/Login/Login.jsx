@@ -21,8 +21,11 @@ const Login = () => {
 
       const token = response.data.token;
 
+      const userRole = response.data.data.role;
+
       // console.log("token:", token);
       localStorage.setItem("token", token);
+      localStorage.setItem("role", userRole);
 
       navigate("/home");
     } catch (error) {

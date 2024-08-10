@@ -21,7 +21,7 @@ const AddShiftModal = ({ onClose, onAddShift }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-50">
+    <div className="fixed inset-0 flex justify-center items-center z-20 bg-gray-600 bg-opacity-50">
       <div className="bg-white p-6 rounded-xl w-3/4 lg:w-1/2 ">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Add Shift</h2>

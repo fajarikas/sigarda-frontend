@@ -197,7 +197,7 @@ const Project = () => {
   };
 
   return (
-    <div className="space-x-5 z-30 w-10/12 h-fit px-0 lg:px-4 ">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:px-4 ">
       <Title text="Project" />
 
       <div className="mt-7 items-center w-full flex  lg:flex justify-between">

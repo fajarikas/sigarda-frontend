@@ -62,7 +62,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen pb-20 space-x-5 z-20 w-10/12">
+    <div className="min-h-screen pb-20 space-x-5 lg:space-x-0 z-20 w-10/12">
       <Title text="Home" />
       <div className="mt-7 block">
         <div className="block space-y-6 lg:space-y-0 lg:flex justify-between w-10/12">

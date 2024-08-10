@@ -90,7 +90,7 @@ const User = () => {
   };
 
   return (
-    <div className=" space-x-5 block z-10 h-fit lg:h-fit w-10/12 lg:pb-0 pb-16 ">
+    <div className=" space-x-5 lg:space-x-0 block z-10 h-fit lg:h-fit w-10/12 lg:pb-0 pb-16 ">
       <Title text="Users" />
       <div className="mt-7 items-center w-full flex justify-between">
         <Search
