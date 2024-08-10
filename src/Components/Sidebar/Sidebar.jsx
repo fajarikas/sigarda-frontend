@@ -21,6 +21,8 @@ const Sidebar = () => {
     window.location.href = "/";
   };
 
+  const userRole = localStorage.getItem("role");
+
   const confirmLogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -57,18 +59,22 @@ const Sidebar = () => {
           >
             <AiFillHome />
           </NavLink>
-          <NavLink
-            to="/user"
-            className={({ isActive }) =>
-              `text-2xl p-3 ${
-                isActive
-                  ? "bg-white text-[#2D3845] rounded-lg shadow-xl "
-                  : "text-[#BDBDBD]"
-              }`
-            }
-          >
-            <MdPeople />
-          </NavLink>
+
+          {userRole === "super admin" && (
+            <NavLink
+              to="/user"
+              className={({ isActive }) =>
+                `text-2xl p-3 ${
+                  isActive
+                    ? "bg-white text-[#2D3845] rounded-lg shadow-xl "
+                    : "text-[#BDBDBD]"
+                }`
+              }
+            >
+              <MdPeople />
+            </NavLink>
+          )}
+
           <NavLink
             to="/project"
             className={({ isActive }) =>

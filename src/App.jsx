@@ -41,12 +41,13 @@ function App() {
               path="/user"
               element={
                 <DashboardLayout>
-                  <RequireAuth>
+                  <RequireAuth requiredRole="super admin">
                     <User />
                   </RequireAuth>
                 </DashboardLayout>
               }
             />
+
             <Route
               path="/project"
               element={

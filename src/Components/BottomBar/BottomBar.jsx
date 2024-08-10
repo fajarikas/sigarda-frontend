@@ -19,6 +19,8 @@ import { RiMenu3Fill } from "react-icons/ri";
 const BottomBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
+  const userRole = localStorage.getItem("role");
+
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -62,9 +64,11 @@ const BottomBar = () => {
             <NavLink to="/home" className="flex items-center">
               <AiFillHome className="mr-2" /> Home
             </NavLink>
-            <NavLink to="/user" className="flex items-center mt-4">
-              <MdPeople className="mr-2" /> User
-            </NavLink>
+            {userRole === "super admin" && (
+              <NavLink to="/user" className="flex items-center mt-4">
+                <MdPeople className="mr-2" /> User
+              </NavLink>
+            )}
             <NavLink to="/project" className="flex items-center mt-4">
               <IoDocuments className="mr-2" /> Project
             </NavLink>
