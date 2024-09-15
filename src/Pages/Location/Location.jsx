@@ -194,7 +194,7 @@ const Location = () => {
   };
 
   return (
-    <div className="lg:space-x-0 space-x-5 z-30 w-10/12  h-screen">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:pr-4">
       <Title text="Locations" />
 
       <div className="mt-7 items-center w-full flex justify-between">
@@ -211,7 +211,7 @@ const Location = () => {
       </div>
 
       <div className="bg-white px-10 py-2 mt-7 shadow-xl rounded-xl overflow-x-auto">
-        <table className="w-full min-w-max lg:table-fixed">
+        <table className="w-full min-w-max ">
           <thead className="border-b mb-5">
             <tr>
               <th className="py-3 text-left">Office Name</th>

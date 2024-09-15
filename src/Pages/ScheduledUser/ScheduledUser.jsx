@@ -5,7 +5,7 @@ import Search from "../../Components/Search/Search";
 import IconButton from "../../Components/Button/IconButton";
 import { IoAddOutline } from "react-icons/io5";
 import PrimaryButton from "../../Components/Button/PrimaryButton";
-import { MdEdit, MdDelete } from "react-icons/md";
+import { MdEdit, MdDelete, MdAssignmentTurnedIn } from "react-icons/md";
 import { BiSolidShow } from "react-icons/bi";
 import Swal from "sweetalert2";
 import AddScheduledUserModal from "../../Components/Modal/ScheduledUser/AddScheduledUserModal";
@@ -168,7 +168,7 @@ const ScheduledUser = () => {
   };
 
   return (
-    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-screen lg:h-fit">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:pr-4">
       <Title text="Scheduled Users" />
 
       <div className="mt-7 items-center w-full flex justify-between">
@@ -185,10 +185,10 @@ const ScheduledUser = () => {
       </div>
 
       <div className="bg-white px-10 py-2 mt-7 shadow-xl rounded-xl overflow-x-auto">
-        <table className="w-full min-w-max lg:table-fixed">
+        <table className="w-full min-w-max">
           <thead className="border-b mb-5">
             <tr>
-              <th className="py-3 text-left">Schedule </th>
+              <th className="py-3 text-left">Schedule</th>
               <th className="py-3 text-center">User</th>
               <th className="py-3 text-center">Actions</th>
             </tr>
@@ -209,18 +209,25 @@ const ScheduledUser = () => {
             ) : (
               currentItems.map((scheduledUser, index) => (
                 <tr key={index} className="[1px] border-[#E1E1E1] border-b">
-                  <td className="py-3 text-left">{scheduledUser.schedule}</td>
+                  <td className="py-3 text-left">
+                    {scheduledUser.schedule
+                      ? scheduledUser.schedule
+                      : "Belum Terassign ke Schedule"}
+                  </td>
                   <td className="py-3 text-center">{scheduledUser.user}</td>
                   <td className="py-3 flex justify-center space-x-2">
+                    {(localStorage.getItem("role") === "super admin" ||
+                      localStorage.getItem("role") === "admin") && (
+                      <PrimaryButton
+                        text={<MdAssignmentTurnedIn />}
+                        color="bg-green-600"
+                        onClick={() => handleEditClick(scheduledUser)}
+                      />
+                    )}
                     <PrimaryButton
                       text={<BiSolidShow />}
                       color="bg-blue-600"
                       onClick={() => handleShowClick(scheduledUser)}
-                    />
-                    <PrimaryButton
-                      text={<MdEdit />}
-                      color="bg-green-600"
-                      onClick={() => handleEditClick(scheduledUser)}
                     />
                     <PrimaryButton
                       text={<MdDelete />}

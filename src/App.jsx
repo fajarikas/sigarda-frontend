@@ -19,6 +19,7 @@ import ScheduledUser from "./Pages/ScheduledUser/ScheduledUser";
 import Presence from "./Pages/Presence/Presence";
 import Shift from "./Pages/Shift/Shift";
 import ShiftChange from "./Pages/ShiftChange/ShiftChange";
+import Register from "./Pages/Register/Register";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route
               path="/home"
               element={

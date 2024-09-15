@@ -98,7 +98,7 @@ const EditScheduledUserModal = ({
       <div className="fixed inset-0 bg-black w-full bg-opacity-50" />
       <div className="fixed inset-0 z-50 w-1/2 mx-auto bg-white p-7 my-auto h-fit rounded-xl shadow-xl">
         <div className="flex items-center justify-between">
-          <p className="font-semibold text-lg">Edit Scheduled User</p>
+          <p className="font-semibold text-lg">Assign User to Schedule</p>
           <SmallIconButton
             color="bg-red-600"
             onClick={onClose}
@@ -126,6 +126,7 @@ const EditScheduledUserModal = ({
               placeholder="Select a user"
               isClearable
               required
+              isDisabled={true}
             />
           </div>
 
@@ -135,7 +136,7 @@ const EditScheduledUserModal = ({
               type="submit"
               disabled={loading}
             >
-              {loading ? "Loading..." : "Update Scheduled User"}
+              {loading ? "Loading..." : "Assign User to Schedule"}
             </button>
           </div>
           {error && <p className="text-red-500 mt-3">{error}</p>}

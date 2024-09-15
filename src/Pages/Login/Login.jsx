@@ -4,6 +4,7 @@ import LoginForm from "../../Components/Input/LoginForm";
 import LoginButton from "../../Components/Button/LoginButton";
 import api from "../../API/api";
 import { useNavigate } from "react-router-dom";
+import CreateAccountButton from "../../Components/Button/CreateAccountButton";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,6 +33,10 @@ const Login = () => {
       console.error("Login error:", error);
       setError(error.response.data.message);
     }
+  };
+
+  const handleRegister = () => {
+    navigate("/register");
   };
 
   return (
@@ -67,6 +72,13 @@ const Login = () => {
             <LoginButton type="submit" />
           </div>
         </form>
+
+        <div className="mt-5">
+          <p>Doesn't have an account?</p>
+          <div className="mt-3">
+            <CreateAccountButton onClick={handleRegister} />
+          </div>
+        </div>
       </div>
     </div>
   );

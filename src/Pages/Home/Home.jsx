@@ -62,10 +62,10 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen pb-20 space-x-5 lg:space-x-0 z-20 w-10/12">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:pr-4">
       <Title text="Home" />
-      <div className="mt-7 block">
-        <div className="block space-y-6 lg:space-y-0 lg:flex justify-between w-10/12">
+      <div className="mt-7 block ">
+        <div className="block space-y-6 lg:space-y-0 lg:flex justify-between ">
           <CardData icon={<FaUser />} text="User" data={countUser} />
           <CardData
             icon={<FaProjectDiagram />}

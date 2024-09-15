@@ -197,15 +197,15 @@ const Project = () => {
   };
 
   return (
-    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:px-4 ">
+    <div className="lg:space-x-0 space-x-5 z-30 w-10/12 h-fit px-0 lg:pr-4 ">
       <Title text="Project" />
 
-      <div className="mt-7 items-center w-full flex  lg:flex justify-between">
+      <div className="mt-7 items-center w-full flex justify-between">
         <Search
           placeholder="Search project here"
           value={searchItem}
           onChange={handleSearch}
-          className="mb-4 md:mb-0"
+          // className="mb-4 md:mb-0"
         />
         <IconButton
           text={<IoAddOutline />}
@@ -215,7 +215,7 @@ const Project = () => {
       </div>
 
       <div className="bg-white px-4 md:px-10 py-2 mt-7 shadow-xl rounded-xl overflow-x-auto">
-        <table className="w-full min-w-max">
+        <table className="w-full min-w-max ">
           <thead className="border-b mb-5">
             <tr className="w-full">
               <th className="py-3 text-left">Project Name</th>
