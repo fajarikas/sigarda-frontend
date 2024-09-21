@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import api from "../../API/api";
 import Title from "../../Components/Title/Title";
 import Search from "../../Components/Search/Search";
 import IconButton from "../../Components/Button/IconButton";
@@ -10,8 +9,9 @@ import { BiSolidShow } from "react-icons/bi";
 import Swal from "sweetalert2";
 import AddScheduledUserModal from "../../Components/Modal/ScheduledUser/AddScheduledUserModal";
 import EditScheduledUserModal from "../../Components/Modal/ScheduledUser/EditScheduledUserModal";
-import ShowScheduledUserModal from "../../Components/Modal/ScheduledUser/ShowScheduledUserModal";
 import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
+import UserShiftCalendar from "../../Components/UserShiftCalendar/UserShiftCalendar";
+import api from "../../API/api";
 
 const ScheduledUser = () => {
   const [scheduledUsers, setScheduledUsers] = useState([]);
@@ -25,6 +25,7 @@ const ScheduledUser = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [currentScheduledUser, setCurrentScheduledUser] = useState(null);
+  const [showCalendarModal, setShowCalendarModal] = useState(false); // State untuk menampilkan kalender shift
 
   useEffect(() => {
     const fetchScheduledUsers = async () => {
@@ -116,7 +117,7 @@ const ScheduledUser = () => {
 
   const handleShowClick = (scheduledUser) => {
     setCurrentScheduledUser(scheduledUser);
-    setShowDetailModal(true);
+    setShowCalendarModal(true); // Show shift calendar
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -227,7 +228,7 @@ const ScheduledUser = () => {
                     <PrimaryButton
                       text={<BiSolidShow />}
                       color="bg-blue-600"
-                      onClick={() => handleShowClick(scheduledUser)}
+                      onClick={() => handleShowClick(scheduledUser)} // Show calendar modal
                     />
                     <PrimaryButton
                       text={<MdDelete />}
@@ -258,10 +259,10 @@ const ScheduledUser = () => {
         />
       )}
 
-      {showDetailModal && currentScheduledUser && (
-        <ShowScheduledUserModal
-          scheduledUser={currentScheduledUser}
-          onClose={() => setShowDetailModal(false)}
+      {showCalendarModal && currentScheduledUser && (
+        <UserShiftCalendar
+          userId={currentScheduledUser.user_id}
+          onClose={() => setShowCalendarModal(false)}
         />
       )}
     </div>
